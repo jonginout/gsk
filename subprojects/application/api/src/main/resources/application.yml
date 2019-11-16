@@ -1,0 +1,10 @@
+spring.profiles.active: ${SPRING_PROFILES_ACTIVE:dev}
+spring.profiles.include: db,domain-gsk,domain-gsk-log
+
+server.port: ${API_PORT:7000}
+
+debug: true
+
+spring:
+  output.ansi.enabled: always
+  main.allow-bean-definition-overriding: true

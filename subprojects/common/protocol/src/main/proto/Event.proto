@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.jonginout.proto.gsk.event";
+option java_outer_classname = "EventProto";
+
+package proto.gsk.evnet;
+
+enum EventStateProto {
+    ACTIVE = 0;
+    INACTIVE = 1;
+}
+
+message EventRequestProto {
+    string name = 1;
+    string description = 2;
+    string location = 3;
+    string start_at = 4;
+    string end_at = 5;
+    EventStateProto state = 6;
+    int64 creator_id = 7;
+}
+
+message EventResponseProto {
+    string name = 1;
+    string description = 2;
+    string location = 3;
+    string start_at = 4;
+    string end_at = 5;
+    EventStateProto state = 6;
+    int64 creator_id = 7;
+    string creator_email = 8;
+}
+
+service Event {
+    rpc makeEvent (EventRequestProto) returns (EventResponseProto);
+}

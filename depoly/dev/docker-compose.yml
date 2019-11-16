@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  mysql5.6:
+    image: mysql:5.6
+    container_name: mysql5.6
+    ports:
+      - 3307:3306
+    environment:
+      - TZ=Asia/Seoul
+      - MYSQL_ROOT_PASSWORD=111111
+      - MYSQL_DATABASE=gsk
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=111111
