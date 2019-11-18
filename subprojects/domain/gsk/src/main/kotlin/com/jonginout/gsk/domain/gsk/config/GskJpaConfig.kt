@@ -15,13 +15,12 @@ import org.springframework.transaction.PlatformTransactionManager
 import javax.persistence.EntityManagerFactory
 import javax.sql.DataSource
 
-@Configuration
 @EnableJpaRepositories(
     basePackages = [GskJpaConfig.REPOSITORY_PACKAGE_NAME],
     entityManagerFactoryRef = GskJpaConfig.ENTITY_MANAGER_FACTORY_BEAN_NAME,
     transactionManagerRef = GskJpaConfig.TRANSACTION_MANAGER_BEAN_NAME
 )
-class GskJpaConfig : BaseJpaConfig() {
+open class GskJpaConfig : BaseJpaConfig() {
 
     companion object {
         private const val JPA_PROPERTIES = "gsk-jpa"

@@ -1,0 +1,30 @@
+### event 단건 수정 / 트랜잭션 fail -> rollback
+PUT {{host}}/api/event/1
+Content-Type: application/json
+
+{
+  "name": "change_name_http_test",
+  "description": "change_description_http_test",
+  "location": "change_location_http_test",
+  "startAt": "2018-12-15T10:00:00",
+  "endAt": "2018-12-20T10:00:00",
+  "state": "ACTIVE",
+  "creatorId": 1
+}
+
+### event 단건 수정
+PUT {{host}}/api/event/1
+Content-Type: application/json
+
+{
+  "name": "change",
+  "description": "change_description_http_test",
+  "location": "change_location_http_test",
+  "startAt": "2018-12-15T10:00:00",
+  "endAt": "2018-12-20T10:00:00",
+  "state": "ACTIVE",
+  "creatorId": 1
+}
+
+###
+

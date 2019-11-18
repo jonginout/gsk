@@ -6,6 +6,7 @@ import com.jonginout.gsk.domain.gsk.dto.account.AccountRequestBody
 import com.jonginout.gsk.domain.gsk.exception.AccountDuplicationException
 import com.jonginout.gsk.domain.gsk.exception.AccountNotFoundException
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
 class AccountService(

@@ -4,6 +4,7 @@ dependencies {
 //    implementation(project(":util:extension"))
 //    implementation(project(":util:crypto"))
     api(project(":common:jpa"))
+    api(project(":domain:gsk"))
     api(project(":application:api"))
     kapt("com.querydsl:querydsl-apt:$querydslVersion:jpa")
     runtimeOnly("mysql:mysql-connector-java")

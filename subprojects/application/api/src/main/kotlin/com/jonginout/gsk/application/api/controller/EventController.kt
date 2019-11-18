@@ -1,6 +1,8 @@
 package com.jonginout.gsk.application.api.controller
 
 import com.jonginout.gsk.application.api.exception.BindingResultException
+import com.jonginout.gsk.domain.core.service.EventUpdaterService
+import com.jonginout.gsk.domain.gsk.component.EventValidator
 import com.jonginout.gsk.domain.gsk.domain.event.Event
 import com.jonginout.gsk.domain.gsk.dto.event.EventRequestBody
 import com.jonginout.gsk.domain.gsk.service.EventService
@@ -21,7 +23,9 @@ import javax.validation.Valid
 @RestController
 @RequestMapping("/api/event")
 class EventController(
-    private val eventService: EventService
+    private val eventService: EventService,
+    private val eventValidator: EventValidator,
+    private val eventUpdaterService: EventUpdaterService
 ) {
 
     @GetMapping
@@ -51,6 +55,8 @@ class EventController(
         if (bindingResult.hasErrors()) {
             throw BindingResultException(bindingResult)
         }
+        this.eventValidator.validate(body)
+
         val newEvent = this.eventService.create(body)
 
         return ResponseEntity.created(
@@ -67,9 +73,10 @@ class EventController(
         if (bindingResult.hasErrors()) {
             throw BindingResultException(bindingResult)
         }
+        this.eventValidator.validate(body)
 
         return ResponseEntity.ok(
-            this.eventService.update(id, body)
+            this.eventUpdaterService.update(id, body)
         )
     }
 }

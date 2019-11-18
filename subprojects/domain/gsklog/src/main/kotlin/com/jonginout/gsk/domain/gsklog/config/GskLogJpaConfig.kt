@@ -15,13 +15,12 @@ import org.springframework.transaction.PlatformTransactionManager
 import javax.persistence.EntityManagerFactory
 import javax.sql.DataSource
 
-@Configuration
 @EnableJpaRepositories(
     basePackages = [GskLogJpaConfig.REPOSITORY_PACKAGE_NAME],
     entityManagerFactoryRef = GskLogJpaConfig.ENTITY_MANAGER_FACTORY_BEAN_NAME,
     transactionManagerRef = GskLogJpaConfig.TRANSACTION_MANAGER_BEAN_NAME
 )
-class GskLogJpaConfig : BaseJpaConfig() {
+open class GskLogJpaConfig : BaseJpaConfig() {
 
     companion object {
         private const val JPA_PROPERTIES = "gsk-log-jpa"
@@ -34,21 +33,18 @@ class GskLogJpaConfig : BaseJpaConfig() {
         const val TRANSACTION_MANAGER_BEAN_NAME = "gskLogTransactionManager"
     }
 
-    @Primary
     @Bean(JPA_PROPERTIES_BEAN_NAME)
     @ConfigurationProperties(JPA_PROPERTIES)
     override fun jpaProperties(): JpaProperties {
         return super.jpaProperties()
     }
 
-    @Primary
     @Bean(DATA_SOURCE_PROPERTIES_BEAN_NAME)
     @ConfigurationProperties(DATA_SOURCE_PROPERTIES)
     override fun dataSourceProperties(): DataSourceProperties {
         return super.dataSourceProperties()
     }
 
-    @Primary
     @Bean(DATA_SOURCE_BEAN_NAME)
     override fun dataSource(
         @Qualifier(DATA_SOURCE_PROPERTIES_BEAN_NAME)
@@ -57,7 +53,6 @@ class GskLogJpaConfig : BaseJpaConfig() {
         return super.dataSource(dataSourceProperties)
     }
 
-    @Primary
     @Bean(ENTITY_MANAGER_FACTORY_BEAN_NAME)
     override fun entityManagerFactory(
         builder: EntityManagerFactoryBuilder,
@@ -67,7 +62,6 @@ class GskLogJpaConfig : BaseJpaConfig() {
         return super.entityManagerFactory(builder, dataSource, jpaProperties)
     }
 
-    @Primary
     @Bean(TRANSACTION_MANAGER_BEAN_NAME)
     override fun transactionManager(
         @Qualifier(ENTITY_MANAGER_FACTORY_BEAN_NAME)
