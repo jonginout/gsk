@@ -6,21 +6,21 @@ logging.level.org.hibernate.type.descriptor.sql.BasicBinder: trace
 gsk-jpa:
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:socar;MODE=MySQL;DB_CLOSE_DELAY=-1
+    url: jdbc:h2:mem:gsk;MODE=MySQL;DB_CLOSE_DELAY=-1
     username: sa
     password:
   dialect: org.hibernate.dialect.H2Dialect
   persistence-unit: gsk
-  entity-package: com.jonginout.gsk.domain.gsk
+  entity-package: com.jonginout.gsk.model.domain.gsk
   ddl-auto: create
-
-gsk-jpa-log:
+gsk-log-jpa:
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:socar;MODE=MySQL;DB_CLOSE_DELAY=-1
+    url: jdbc:h2:mem:gsklog;MODE=MySQL;DB_CLOSE_DELAY=-1
     username: sa
     password:
   dialect: org.hibernate.dialect.H2Dialect
   persistence-unit: gsk-log
-  entity-package: com.jonginout.gsk.domain.gsklog
+  entity-package: com.jonginout.gsk.model.domain.gsklog
   ddl-auto: create
+

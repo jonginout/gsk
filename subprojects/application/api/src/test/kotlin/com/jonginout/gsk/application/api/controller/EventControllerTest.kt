@@ -1,9 +1,9 @@
 package com.jonginout.gsk.application.api.controller
 
 import com.jonginout.gsk.application.api.base.BaseControllerTest
-import com.jonginout.gsk.domain.gsk.domain.account.Account
-import com.jonginout.gsk.domain.gsk.domain.event.Event
-import com.jonginout.gsk.domain.gsk.dto.event.EventRequestBody
+import com.jonginout.gsk.model.domain.gsk.domain.account.Account
+import com.jonginout.gsk.model.domain.gsk.domain.event.Event
+import com.jonginout.gsk.model.domain.gsk.dto.event.EventRequestBody
 import org.junit.Test
 import org.springframework.hateoas.MediaTypes
 import org.springframework.http.MediaType

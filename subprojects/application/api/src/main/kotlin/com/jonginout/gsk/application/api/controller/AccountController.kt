@@ -1,8 +1,8 @@
 package com.jonginout.gsk.application.api.controller
 
 import com.jonginout.gsk.application.api.exception.BindingResultException
-import com.jonginout.gsk.domain.gsk.dto.account.AccountRequestBody
-import com.jonginout.gsk.domain.gsk.service.AccountService
+import com.jonginout.gsk.model.domain.gsk.dto.account.AccountRequestBody
+import com.jonginout.gsk.model.domain.gsk.service.AccountService
 import org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo
 import org.springframework.http.ResponseEntity
 import org.springframework.validation.BindingResult

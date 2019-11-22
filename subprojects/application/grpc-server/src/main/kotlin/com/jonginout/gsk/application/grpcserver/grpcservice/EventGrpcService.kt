@@ -3,8 +3,8 @@ package com.jonginout.gsk.application.grpcserver.grpcservice
 import com.jonginout.gsk.application.grpcserver.extension.toEvent
 import com.jonginout.gsk.application.grpcserver.extension.toEventRequestBody
 import com.jonginout.gsk.application.grpcserver.extension.toEventResponseProto
-import com.jonginout.gsk.domain.gsk.domain.account.AccountRepository
-import com.jonginout.gsk.domain.gsk.service.EventService
+import com.jonginout.gsk.model.domain.gsk.domain.account.AccountRepository
+import com.jonginout.gsk.model.domain.gsk.service.EventService
 import com.jonginout.proto.gsk.event.EventGrpc
 import com.jonginout.proto.gsk.event.EventRequestProto
 import com.jonginout.proto.gsk.event.EventResponseProto

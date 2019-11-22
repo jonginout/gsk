@@ -1,12 +1,12 @@
 package com.jonginout.gsk.application.api.base
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.jonginout.gsk.domain.gsk.domain.account.Account
-import com.jonginout.gsk.domain.gsk.domain.account.AccountRepository
-import com.jonginout.gsk.domain.gsk.domain.event.Event
-import com.jonginout.gsk.domain.gsk.domain.event.EventRepository
-import com.jonginout.gsk.domain.gsk.domain.event.EventState
-import com.jonginout.gsk.domain.gsk.dto.event.EventRequestBody
+import com.jonginout.gsk.model.domain.gsk.domain.account.Account
+import com.jonginout.gsk.model.domain.gsk.domain.account.AccountRepository
+import com.jonginout.gsk.model.domain.gsk.domain.event.Event
+import com.jonginout.gsk.model.domain.gsk.domain.event.EventRepository
+import com.jonginout.gsk.model.domain.gsk.domain.event.EventState
+import com.jonginout.gsk.model.domain.gsk.dto.event.EventRequestBody
 import org.junit.Ignore
 import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Autowired

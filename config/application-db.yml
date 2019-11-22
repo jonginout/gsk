@@ -5,7 +5,6 @@ datasources:
     username: root
     password: 111111
     dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-
   gsk-log:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3307/gsk_log?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul&useSSL=false&zeroDateTimeBehavior=convertToNull

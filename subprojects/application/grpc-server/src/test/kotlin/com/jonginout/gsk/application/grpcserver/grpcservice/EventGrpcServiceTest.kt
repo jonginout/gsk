@@ -2,7 +2,7 @@ package com.jonginout.gsk.application.grpcserver.grpcservice
 
 import com.jonginout.gsk.application.grpcserver.base.BaseTest
 import com.jonginout.gsk.application.grpcserver.extension.toEventRequestProto
-import com.jonginout.gsk.domain.gsk.domain.event.Event
+import com.jonginout.gsk.model.domain.gsk.domain.event.Event
 import com.jonginout.proto.gsk.event.EventGrpc
 import io.grpc.ManagedChannel
 import io.grpc.ManagedChannelBuilder

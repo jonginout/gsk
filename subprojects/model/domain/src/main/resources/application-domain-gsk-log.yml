@@ -1,0 +1,10 @@
+gsk-log-jpa:
+  datasource:
+    driver-class-name: ${datasources.gsk-log.driver-class-name}
+    url: ${datasources.gsk-log.url}
+    username: ${datasources.gsk-log.username}
+    password: ${datasources.gsk-log.password}
+  dialect: ${datasources.gsk-log.dialect}
+  persistence-unit: gsk-log
+  entity-package: com.jonginout.gsk.model.domain.gsklog
+  ddl-auto: create

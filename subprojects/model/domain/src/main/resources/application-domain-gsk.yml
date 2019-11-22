@@ -1,0 +1,10 @@
+gsk-jpa:
+  datasource:
+    driver-class-name: ${datasources.gsk.driver-class-name}
+    url: ${datasources.gsk.url}
+    username: ${datasources.gsk.username}
+    password: ${datasources.gsk.password}
+  dialect: ${datasources.gsk.dialect}
+  persistence-unit: gsk
+  entity-package: com.jonginout.gsk.model.domain.gsk
+  ddl-auto: create

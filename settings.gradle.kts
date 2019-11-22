@@ -3,11 +3,9 @@ rootProject.name = "gsk"
 include(
     "application:api",
     "application:grpc-server",
-    "domain:core",
-    "domain:gsk",
-    "domain:gsklog",
     "common:jpa",
-    "common:protocol"
+    "common:protocol",
+    "model:domain"
 )
 
 rootProject.children.forEach { group ->

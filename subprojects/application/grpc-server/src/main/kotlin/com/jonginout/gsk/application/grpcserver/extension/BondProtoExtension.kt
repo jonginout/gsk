@@ -2,10 +2,10 @@ package com.jonginout.gsk.application.grpcserver.extension
 
 import com.jonginout.gsk.common.protocol.extension.toLocalDateTime
 import com.jonginout.gsk.common.protocol.extension.toTimestamp
-import com.jonginout.gsk.domain.gsk.domain.account.Account
-import com.jonginout.gsk.domain.gsk.domain.event.Event
-import com.jonginout.gsk.domain.gsk.domain.event.EventState
-import com.jonginout.gsk.domain.gsk.dto.event.EventRequestBody
+import com.jonginout.gsk.model.domain.gsk.domain.account.Account
+import com.jonginout.gsk.model.domain.gsk.domain.event.Event
+import com.jonginout.gsk.model.domain.gsk.domain.event.EventState
+import com.jonginout.gsk.model.domain.gsk.dto.event.EventRequestBody
 import com.jonginout.proto.gsk.event.EventRequestProto
 import com.jonginout.proto.gsk.event.EventResponseProto
 import com.jonginout.proto.gsk.event.EventStateProto

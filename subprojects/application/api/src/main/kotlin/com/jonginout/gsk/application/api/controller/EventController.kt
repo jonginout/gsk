@@ -1,11 +1,10 @@
 package com.jonginout.gsk.application.api.controller
 
 import com.jonginout.gsk.application.api.exception.BindingResultException
-import com.jonginout.gsk.domain.core.service.EventUpdaterService
-import com.jonginout.gsk.domain.gsk.component.EventValidator
-import com.jonginout.gsk.domain.gsk.domain.event.Event
-import com.jonginout.gsk.domain.gsk.dto.event.EventRequestBody
-import com.jonginout.gsk.domain.gsk.service.EventService
+import com.jonginout.gsk.model.domain.gsk.component.EventValidator
+import com.jonginout.gsk.model.domain.gsk.domain.event.Event
+import com.jonginout.gsk.model.domain.gsk.dto.event.EventRequestBody
+import com.jonginout.gsk.model.domain.gsk.service.EventService
 import org.springframework.data.domain.Pageable
 import org.springframework.data.web.PagedResourcesAssembler
 import org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo
@@ -24,8 +23,7 @@ import javax.validation.Valid
 @RequestMapping("/api/event")
 class EventController(
     private val eventService: EventService,
-    private val eventValidator: EventValidator,
-    private val eventUpdaterService: EventUpdaterService
+    private val eventValidator: EventValidator
 ) {
 
     @GetMapping
@@ -76,7 +74,7 @@ class EventController(
         this.eventValidator.validate(body)
 
         return ResponseEntity.ok(
-            this.eventUpdaterService.update(id, body)
+            this.eventService.update(id, body)
         )
     }
 }

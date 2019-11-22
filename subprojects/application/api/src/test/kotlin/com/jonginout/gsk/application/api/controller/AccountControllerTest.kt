@@ -1,7 +1,7 @@
 package com.jonginout.gsk.application.api.controller
 
 import com.jonginout.gsk.application.api.base.BaseControllerTest
-import com.jonginout.gsk.domain.gsk.dto.account.AccountRequestBody
+import com.jonginout.gsk.model.domain.gsk.dto.account.AccountRequestBody
 import org.junit.Test
 import org.springframework.hateoas.MediaTypes
 import org.springframework.http.MediaType
