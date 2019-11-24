@@ -7,4 +7,4 @@ gsk-log-jpa:
   dialect: ${datasources.gsk-log.dialect}
   persistence-unit: gsk-log
   entity-package: com.jonginout.gsk.model.domain.gsklog
-  ddl-auto: create
+  ddl-auto: none

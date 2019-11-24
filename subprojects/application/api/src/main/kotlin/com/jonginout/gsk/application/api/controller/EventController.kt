@@ -1,9 +1,11 @@
 package com.jonginout.gsk.application.api.controller
 
 import com.jonginout.gsk.application.api.exception.BindingResultException
+import com.jonginout.gsk.application.api.service.EventStubService
 import com.jonginout.gsk.model.domain.gsk.component.EventValidator
 import com.jonginout.gsk.model.domain.gsk.domain.event.Event
 import com.jonginout.gsk.model.domain.gsk.dto.event.EventRequestBody
+import com.jonginout.gsk.model.domain.gsk.dto.event.EventUpdateRequestBody
 import com.jonginout.gsk.model.domain.gsk.service.EventService
 import org.springframework.data.domain.Pageable
 import org.springframework.data.web.PagedResourcesAssembler
@@ -23,7 +25,7 @@ import javax.validation.Valid
 @RequestMapping("/api/event")
 class EventController(
     private val eventService: EventService,
-    private val eventValidator: EventValidator
+    private val eventStubService: EventStubService
 ) {
 
     @GetMapping
@@ -41,7 +43,7 @@ class EventController(
         @PathVariable id: Long
     ): ResponseEntity<*> {
         return ResponseEntity.ok(
-            this.eventService.detail(id)
+            this.eventStubService.detail(id)
         )
     }
 
@@ -53,28 +55,23 @@ class EventController(
         if (bindingResult.hasErrors()) {
             throw BindingResultException(bindingResult)
         }
-        this.eventValidator.validate(body)
-
-        val newEvent = this.eventService.create(body)
-
+        val event = this.eventStubService.create(body)
         return ResponseEntity.created(
-            linkTo(EventController::class.java).slash(newEvent.id).toUri()
-        ).body(newEvent)
+            linkTo(EventController::class.java).slash(event.id).toUri()
+        ).body(event)
     }
 
     @PutMapping("{id}")
     fun update(
         @PathVariable id: Long,
-        @RequestBody @Valid body: EventRequestBody,
+        @RequestBody @Valid body: EventUpdateRequestBody,
         bindingResult: BindingResult
     ): ResponseEntity<*> {
         if (bindingResult.hasErrors()) {
             throw BindingResultException(bindingResult)
         }
-        this.eventValidator.validate(body)
 
-        return ResponseEntity.ok(
-            this.eventService.update(id, body)
-        )
+        val evnet = this.eventStubService.update(body)
+        return ResponseEntity.ok(evnet)
     }
 }

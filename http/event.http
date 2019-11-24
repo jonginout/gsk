@@ -17,14 +17,33 @@ PUT {{host}}/api/event/1
 Content-Type: application/json
 
 {
-  "name": "change",
+  "id": 1,
   "description": "change_description_http_test!",
+  "name": "change",
   "location": "change_location_http_test",
   "startAt": "2018-12-15T10:00:00",
   "endAt": "2018-12-20T10:00:00",
   "state": "ACTIVE",
   "creatorId": 1
 }
+
+### event 추가
+POST {{host}}/api/event
+Content-Type: application/json
+
+{
+  "name": "new",
+  "description": "new_description_http_test!",
+  "location": "new_location_http_test",
+  "startAt": "2018-12-15T10:00:00",
+  "endAt": "2018-12-20T10:00:00",
+  "state": "ACTIVE",
+  "creatorId": 1
+}
+
+### event 상세 조
+GET {{host}}/api/event/1
+Content-Type: application/json
 
 ###
 

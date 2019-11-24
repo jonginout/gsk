@@ -21,17 +21,41 @@ message EventRequestProto {
     int64 creator_id = 7;
 }
 
+message EventUpdateRequestProto {
+    int64 id = 1;
+    string name = 2;
+    string description = 3;
+    string location = 4;
+    string start_at = 5;
+    string end_at = 6;
+    EventStateProto state = 7;
+    int64 creator_id = 8;
+}
+
+message EventDetailRequestProto {
+    int64 id = 1;
+}
+
 message EventResponseProto {
-    string name = 1;
-    string description = 2;
-    string location = 3;
-    string start_at = 4;
-    string end_at = 5;
-    EventStateProto state = 6;
-    int64 creator_id = 7;
-    string creator_email = 8;
+    int64 id = 1;
+    string name = 2;
+    string description = 3;
+    string location = 4;
+    string start_at = 5;
+    string end_at = 6;
+    EventStateProto state = 7;
+    int64 creator_id = 8;
+    string creator_email = 9;
+    string created_at = 10;
+    string updated_at = 11;
+}
+
+message EventEventResponseProtoList {
+    repeated EventResponseProto events = 1;
 }
 
 service Event {
-    rpc makeEvent (EventRequestProto) returns (EventResponseProto);
+    rpc createEvent (EventRequestProto) returns (EventResponseProto);
+    rpc updateEvent (EventUpdateRequestProto) returns (EventResponseProto);
+    rpc detailEvent (EventDetailRequestProto) returns (EventResponseProto);
 }

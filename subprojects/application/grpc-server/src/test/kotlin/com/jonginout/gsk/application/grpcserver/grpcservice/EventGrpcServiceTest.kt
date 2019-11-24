@@ -1,7 +1,7 @@
 package com.jonginout.gsk.application.grpcserver.grpcservice
 
 import com.jonginout.gsk.application.grpcserver.base.BaseTest
-import com.jonginout.gsk.application.grpcserver.extension.toEventRequestProto
+import com.jonginout.gsk.common.protocol.extension.event.toEventRequestProto
 import com.jonginout.gsk.model.domain.gsk.domain.event.Event
 import com.jonginout.proto.gsk.event.EventGrpc
 import io.grpc.ManagedChannel
@@ -21,7 +21,7 @@ class EventGrpcServiceTest : BaseTest() {
 
         val request = event.toEventRequestProto()
 
-        val response = EventGrpc.newBlockingStub(this.makeChannel()).makeEvent(request)
+        val response = EventGrpc.newBlockingStub(this.makeChannel())
 
         print(response)
     }

@@ -13,6 +13,7 @@ val protobufVersion: String by rootProject.extra
 val grpcVersion: String by rootProject.extra
 
 dependencies {
+    implementation(project(":model:domain"))
     api("io.grpc:grpc-protobuf:$grpcVersion")
     api("io.grpc:grpc-stub:$grpcVersion")
     implementation("com.google.protobuf:protobuf-java-util:$protobufVersion")
